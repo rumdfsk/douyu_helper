@@ -30,7 +30,7 @@ def run():
                 get_need_exp()
             elif mode == 0:
                 logger.info("当前选择模式为:平均分配模式")
-                room_list = get_room_list()
+                room_list = conf.get_conf_list('selfMode', 'roomId')
                 every_give = math.ceil(glow_nums / len(room_list))
                 left = int(glow_nums) - int(every_give) * (len(room_list) - 1)
                 logger.info("------开始捐赠荧光棒------")
